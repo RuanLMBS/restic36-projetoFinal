@@ -1,9 +1,21 @@
-export type TaskProps = {
+export type VagaProps = {
     id: number;
-    title: String;
-    date: String;
-    company: String;
+    titulo: String;
+    descricao: String;
+    dataCadastro: Date;
+    telefone: String
+    status: String;
+    empresa: String;
 };
+
+export type UserProps = {
+    id:number;
+    nome: String;
+    email: String;
+    senha: String;
+    createdAt: Date;
+    updatedAt: Date;
+}
 
 export type RootStackParamList = {
     Login: undefined;

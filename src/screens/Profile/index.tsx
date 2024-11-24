@@ -1,5 +1,6 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
+import { useContext } from 'react';
 import { 
     Wrapper,
     Container, 
@@ -13,10 +14,20 @@ import Logo from '../../components/Logo';
 import theme from '../../theme';
 import Input from '../../components/Input'
 import { Button } from '../../components/Button';
+import { AuthContext } from '../../context/AuthContext';
+import { useNavigation } from '@react-navigation/native';
 
+export default function Profile({navigation}) {
+    const { logout } = useContext(AuthContext);
 
-export default function Profile({navigation }) {
-
+    const logoutHandler = async() => {
+        try {
+            await logout();
+            navigation.navigate('Login');
+        } catch (error) {
+            console.error("Erro no logout:", error);
+        }
+    }
     return (
         <Wrapper>
             <Header>
@@ -42,6 +53,13 @@ export default function Profile({navigation }) {
                     title="Salvar informações" 
                     noSpacing={true} 
                     variant='primary'
+                    />
+
+                <Button 
+                    title="Logout" 
+                    noSpacing={true} 
+                    variant='primary'
+                    onPress={logoutHandler}
                     />
             </Container>
         </Wrapper>
