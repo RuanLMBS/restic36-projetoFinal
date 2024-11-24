@@ -49,7 +49,7 @@ export default function Login({ navigation }) {
                         <TextBlack>Não tem uma conta?</TextBlack>
                         <TextLinkContainer onPress={() => navigation.navigate('FormScreen')}>
                             <TextLink>
-                                    Crie agora mesmo.
+                                    Crie agora mesmo!
                             </TextLink>
                         </TextLinkContainer>
                     </TextContainer>
