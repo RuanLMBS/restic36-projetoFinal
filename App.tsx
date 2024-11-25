@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AuthProvider from './src/context/AuthContext';
 
 import theme from './src/theme';
 
@@ -12,14 +13,15 @@ import FormScreen  from './src/screens/Form';
 import List  from './src/screens/List';
 import Profile  from './src/screens/Profile';
 import Details  from './src/screens/Details';
-import AuthProvider from './src/context/AuthContext';
+import {AuthContext} from './src/context/AuthContext';
+import { useContext } from 'react';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
 
+
 function Auth(){
-  
   return (
     <Tab.Navigator
     screenOptions={({ route }) => ({

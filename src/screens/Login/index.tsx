@@ -45,6 +45,13 @@ export default function Login({ navigation }) {
                     variant='primary'
                     onPress={handleLogin}
                     />
+                     <Button 
+                    title="Testar ir para a tela" 
+                    noSpacing={true} 
+                    variant='primary'
+                    onPress={()=> navigation.navigate('Auth',{screen:'Home'})}
+                    />
+                    
                     <TextContainer>
                         <TextBlack>Não tem uma conta?</TextBlack>
                         <TextLinkContainer onPress={() => navigation.navigate('FormScreen')}>
